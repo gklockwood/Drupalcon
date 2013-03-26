@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel='stylesheet' href='css/styles.css' />
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+<script src="js/jqfloat.min.js"></script>
+
+
+
+
+<style type="text/css">
+/*key areas:
+man body
+bear body
+controls
+clouds
+*/
+
+
+
+
+#holder {
+position: absolute;
+top: 200px;
+left: 100px;  
+}
+
+#dropcont2
+{
+max-width:680px;
+max-height:681px;
+min-width:250px;
+width:85%;
+margin:auto;
+}
+
+/*overall wrapping for man-gets key command with p*/
+
+.man-p {
+display: none;
+margin-top:-680px;
+margin-right:20px;
+margin-left:auto;
+width:32%;
+height:32%;
+height:681px;
+z-index:100;
+position:relative;
+}
+
+
+
+
+
+
+/*man body: this is same as man-p, but must be in sep wrapper for z-index*/
+
+.manbody {
+background: url(img/manbody.png) no-repeat center;
+background-position: center;
+background-size: 100%;
+margin-top: -1361px;
+margin-right: auto;
+width: 100%;
+height: 32%;
+height: 681px;
+z-index: 550;
+position: relative;
+}
+
+
+
+@media (max-width: 400px) {
+.manbody  {
+right:-8px;
+}
+}
+
+
+/*overall wrapping for bear-gets key command with q*/
+
+.bear-q  {
+display: none;
+margin-top:-2900px;
+margin-left:20px;
+margin-right:auto;
+width:32%;
+height:32%;
+height:681px;
+z-index:50;
+position:relative;
+}
+
+@media (max-width: 700px) {
+.bear-q {
+margin-top:-2900px;
+}
+}
+
+
+@media (max-width: 600px) {
+.bear-q {
+margin-top:-2800px;
+}
+}
+
+/*bear body: this is same as bear-q, but must be in sep wrapper for z-index*/
+
+.bearbody {
+background: url(img/bearbody.png) no-repeat center;
+background-position: center;
+background-size: 100%;
+margin-top: -342px;
+margin-left: 20px;
+margin-right: auto;
+width: 100%;
+height: 32%;
+height: 681px;
+z-index: 550;
+position: relative;
+}
+
+
+@media (max-width: 400px) {
+.bearbody  {
+left:-8px;
+}
+}
+
+/*bear arms: the following are the arms and head for the bear*/
+
+.bear-a {
+background: url(img/bearhead.png) no-repeat;
+background-size: 100%;
+background-position: center bottom;
+top: -480px;
+margin-left: 65%;
+max-width: 180px;
+width: 85%;
+height: 100%;
+z-index: 600;
+position:relative;
+}
+
+
+@media (max-width: 735px){
+.bear-a {
+top: -70%;
+}
+}
+
+@media (max-width: 710px){
+.bear-a {
+top: -67%;
+}
+}
+
+@media (max-width: 650px){
+.bear-a {
+top: -65%;
+}
+}
+
+@media (max-width: 540px){
+.bear-a {
+top: -64%;
+}
+}
+
+
+@media (max-width: 514px) {
+.bear-a {
+top: -63%;
+}
+}
+
+@media (max-width: 500px) {
+.bear-a {
+top: -61%;
+}
+}
+
+.bear-s {
+background: url(img/beararmt.png) no-repeat;
+background-size: 100%;
+background-position: center bottom;
+margin-top:-1020px;
+margin-left: 40%;
+max-width: 180px;
+width: 88%;
+height: 100%;
+z-index: 603;
+position:relative;
+}
+
+
+.bear-d {
+background: url(img/beararmb.png) no-repeat;
+background-size: 100%;
+background-position: center bottom;
+margin-top:-1040px;
+margin-left: 55%;
+max-width: 180px;
+width: 95%;
+height: 100%;
+z-index: 29;
+position:relative;
+}
+
+/*man arms: the following are the arms and head for the man*/
+
+
+.man-j
+{
+background: url(img/manhead.png) no-repeat; 
+background-position:center bottom; 
+background-size:100%;
+position: relative;
+top: -490px;
+margin-right: 40%;
+max-width: 152px;
+width: 70%;
+height: 100%;
+z-index:605;
+}
+
+@media all and (max-width: 735px) and (min-width: 651px) {
+.man-j {
+top: -69%;
+}
+}
+
+@media all and (max-width: 650px) and (min-width: 516px) {
+.man-j {
+top: -66%;
+}
+}
+
+
+@media all and (max-width: 515px) and (min-width: 200px) {
+.man-j {
+top: -61%;
+}
+}
+
+
+
+.man-k {
+background: url(img/rightarm.png) no-repeat;
+background-position: center bottom;
+background-size: 100%;
+position: relative;
+top:-1030px;
+margin-left: 15%;
+max-width: 158px;
+width: 80%;
+height: 100%;
+z-index: 607;
+}
+
+.man-l {
+background: url(img/leftarm.png) no-repeat;
+background-position:center bottom; 
+background-size:100%;
+position: relative;
+top:-1040px;
+margin-left: -38%;
+max-width: 162px;
+width: 80%;
+height: 100%;
+z-index:69;
+}
+
+/*clouds: following are the clouds, these cause the most problems with vertical scrolling*/
+
+#cloudleft
+{
+background: url(img/clouds.png) no-repeat center; 
+background-size:100% auto;
+background-position: center;
+height:90%;
+width:360px;
+min-width:360px;
+min-height:277px;
+max-width:360px;
+position:absolute;
+margin-left:15%;
+top:-1350px;
+z-index:8;
+}
+
+
+@media (max-width: 500px) {
+#cloudleft {
+margin-top:45%;
+background-size:90% auto;
+margin-left:5%;
+}
+}
+
+@media (max-width: 400px) {
+#cloudleft  {
+background-size:80% auto;
+margin-top:50%;
+margin-left:5%;
+}
+}
+
+
+
+#cloudright
+{
+background: url(img/clouds.png) no-repeat center; 
+background-size:100% auto;
+background-position: center;
+height:90%;
+width:360px;
+min-width:360px;
+min-height:277px;
+max-width:360px;
+position:absolute;
+left:70%;
+top:-1350px;
+z-index:8;
+}
+
+@media (max-width: 1400px) {
+#cloudright {
+left:65%;
+}
+}
+
+@media (max-width: 1040px) {
+#cloudright {
+left:55%;
+}
+}
+
+@media (max-width: 900px) {
+#cloudright {
+left:50%;
+}
+}
+
+@media (max-width: 730px) {
+#cloudright {
+left:45%;
+}
+}
+
+
+/*cloud: this hides the right cloud in smaller view*/
+@media (max-width: 660px) {
+#cloudright {
+display:none;
+}
+}
+
+@media (max-width: 400px) {
+#cloudright  {
+display:none;
+}
+}
+
+/*controls:*/
+
+#controls
+{ 
+background: url(img/controls.png) no-repeat;
+background-size: 100%;
+background-position:bottom;
+height:55%;
+width:55%;
+position:relative;
+margin-top:-1140px;
+margin-right:auto;
+margin-left:auto;
+min-height:327px;
+width:432px;
+z-index:900;
+
+}
+
+/*controls: drop down because of wrapper and ribbon query*/
+
+@media (max-width: 700px) {
+#controls {
+top:-10px;
+min-height:327px;
+max-width:432px;
+height:65%;
+width:65%;
+}
+}
+
+@media (max-width: 600px) {
+#controls {
+top:-10px;
+min-height:327px;
+max-width:432px;
+height:65%;
+width:65%;
+}
+}
+
+@media (max-width: 400px) {
+#controls  {
+top:-20px;
+top:-10px;
+min-height:327px;
+max-width:432px;
+height:65%;
+width:65%;
+}
+}
+
+</style>
+
+
+<script>
+$(function() {
+setTimeout (function() {
+var $dropDiv = $('.bear-q');
+var mythis = $('#holder a');
+// get position of the element we clicked on
+var offset = mythis.offset();
+
+// get width/height of click element
+var h = mythis.outerHeight();
+var w = mythis.outerWidth();
+
+// get width/height of drop element
+var dh = $dropDiv.outerHeight();
+var dw = $dropDiv.outerWidth();
+
+// determine middle position
+var initLeft = offset.left + ((w/0) - (dw/0));
+
+// animate drop
+$dropDiv.css({
+left: initLeft,
+top: $(window).scrollTop() - dh,
+opacity: 0,
+display: 'block'
+}).animate({
+left: initLeft,
+top: offset.top - dh,
+opacity: 1
+}, 500, 'easeOutBounce');
+},1200);
+});
+
+
+
+
+$(function() {
+setTimeout (function() {
+var $dropDiv = $('.man-p');
+var mythis = $('#holder a');
+// get position of the element we clicked on
+var offset = mythis.offset();
+
+// get width/height of click element
+var h = mythis.outerHeight();
+var w = mythis.outerWidth();
+
+// get width/height of drop element
+var dh = $dropDiv.outerHeight();
+var dw = $dropDiv.outerWidth();
+
+// determine middle position
+var initLeft = offset.left + ((w/0) - (dw/0));
+
+// animate drop
+$dropDiv.css({
+left: initLeft,
+top: $(window).scrollTop() - dh,
+opacity: 0,
+display: 'block'
+}).animate({
+left: initLeft,
+top: offset.top - dh,
+opacity: 1
+}, 500, 'easeOutBounce');
+},1200);
+});
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+
+//Animates pressed key's block, the first value is time spent leaving, middle is time spent while out, third is time coming back
+
+//notice where the word right/top/left/bottom...is repeated bellow in the script!!! if you chance the first to right also change the second to right in order to move it back
+
+function manBody(letter){
+$(".man-" + letter).stop(true,false).animate({right:'120px'},
+{easing: 'easeInBack', duration:400}).animate({opacity: 1.0}, 200).animate({right:'0px'},{duration:400});
+}
+
+function bearBody(letter){
+$(".bear-" + letter).stop(true,false).animate({left:'120px'},
+{easing: 'easeInBack', duration:400}).animate({opacity: 1.0}, 200).animate({left:'0px'},{duration:400});
+}
+
+function manHead(letter){
+$(".man-" + letter).stop(true,false).animate({right:'40px'},
+{easing: 'easeInBack', duration:80}).animate({opacity: 1.0}, 200).animate({right:'0px'},{duration:80});
+}
+
+function manArmTop(letter){
+$(".man-" + letter).stop(true,false).animate({right:'1xws0px'},
+{easing: 'easeInBack', duration:80}).animate({opacity: 1.0}, 200).animate({right:'0px'},{duration:80});
+}
+
+
+function manArmBack(letter){
+$(".man-" + letter).stop(true,false).animate({right:'30px'},
+{easing: 'easeInBack', duration:80}).animate({opacity: 1.0}, 200).animate({right:'0px'},{duration:80});
+}
+
+
+function bearHead(letter){
+$(".bear-" + letter).stop(true,false).animate({left:'10px'},
+{easing: 'easeInBack', duration:80}).animate({opacity: 1.0}, 200).animate({left:'0px'},{duration:80});
+}
+
+function bearArmTop(letter){
+$(".bear-" + letter).stop(true,false).animate({left:'40px'},
+{easing: 'easeInBack', duration:80}).animate({opacity: 1.0}, 200).animate({left:'0px'},{duration:80});
+}
+
+function bearArmBack(letter){
+$(".bear-" + letter).stop(true,false).animate({left:'30px'},
+{easing: 'easeInBack', duration:80}).animate({opacity: 1.0}, 200).animate({left:'0px'},{duration:80});
+}
+
+
+$(document).keypress(function(e){
+
+
+if (e.which >= 113) {
+bearBody(String.fromCharCode(e.which));
+}
+
+if (e.which >= 97 && e.which <= 97) {
+bearHead(String.fromCharCode(e.which));
+}
+
+if (e.which >= 115 && e.which <= 115) {
+bearArmTop(String.fromCharCode(e.which));
+}
+
+
+if (e.which >= 100 && e.which <= 100) {
+bearArmBack(String.fromCharCode(e.which));
+}
+
+if (e.which >= 112) {
+manBody(String.fromCharCode(e.which));
+}
+
+
+if (e.which >= 107 && e.which <= 107) {
+manHead(String.fromCharCode(e.which));
+}
+
+if (e.which >= 106 && e.which <= 106) {
+manArmTop(String.fromCharCode(e.which));
+}
+
+if (e.which >= 108 && e.which <= 108) {
+manArmBack(String.fromCharCode(e.which));
+}
+
+
+});
+
+});
+</script>
+
+
+
+<script> 
+
+$(window).load(function () {
+$("#controls").hide(0).delay(2000).fadeIn(500).delay(1000).fadeOut(500)
+});
+</script>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div id="ribbon"></div>
+<div id="safosign"></div>
+
+<div id="wrapper">
+
+<div id="positioner"></div>
+<div id="welcome"></div>
+<div id="mountains"></div>
+<div id="grass"><div id="wtrt"></div></div>
+<div id="grassb"></div>
+<div id="dirt"></div>
+<div id="wtrb"></div>
+<div id="app"><div id="phone"></div><div id="appcont">
+<p>With our app, you won’t be sitting around saying, “Well 
+I don’t know… What do you wanna do?” We’ve researched, 
+deliberated, and made some cut-throat decisions to compile 
+our list of the best things to do in Portland. Our fun, 
+interactive app lets you live it up at DrupalCon by showing 
+you what’s going on at the conference and the hot spots 
+to check out in Portland, along with making it easy to 
+connect with other Drupal lovers.
+<h1>
+<a href="#" target="_blank">DOWNLOAD THE APP TODAY</a></h1></p>
+<a href="#" target="_blank"><div id="download"></div></a>
+</div></div>
+
+
+
+<div id="film">
+<div id="filmheading"> </div>
+<div id="filmshare"> </div>
+</div>
+<div id="footer"></div>
+<div id="treesleft"></div>
+<div id="treesright"></div>
+<div id="girl"></div>
+<div id="bonesleft"></div>
+<div id="bonesright"></div>
+<div id="cloudleft"></div>
+<div id="cloudright"></div>
+<div id="rocks"></div>
+<div id=""></div>
+</div>
+
+<div id="holder"><a href="javascript:void(0);" id="main"></a></div>
+
+
+<div id="dropcont2">
+
+
+<div class="bear-q">
+<div class="bear-a"></div>
+<div class="bear-s"></div>
+<div class="bearbody"></div>
+<div class="bear-d"></div>
+</div>
+
+<div class="man-p">
+<div class="man-j"></div>
+<div class="man-k"></div>
+<div class="manbody"></div>
+<div class="man-l"></div>
+</div>
+
+
+<div id="controls"> </div>
+
+
+</body>
+</html>
