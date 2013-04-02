@@ -727,7 +727,7 @@ $(function(){
  * DOWNLOAD WALLPAPER CLICKS
  * =============================================================
 */
-	$('.dl-button').live('click', function() {
+	$('.dl-button').on('click', function() {
 		window.open($('.slide img').attr('src'));
 	});
 	
@@ -1088,6 +1088,6 @@ function grayscale(src){
 		}
 	}
 	
-$("#four").live('click', function() {
+$("#four").on('click', function() {
 	document.getElementById("imgClickAndChange").src = "http://www.saforian.com/images/va-slider/lightbulb-on.png";
 });
