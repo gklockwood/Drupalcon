@@ -95,19 +95,19 @@ margin-left:20%;
 z-index:312;
 }
 
-@media (max-width: 1770px) {
+@media screen and (max-width: 1770px) {
 #treesleft {
 margin-left:15%;
 }
 }
 
-@media (max-width: 1420px) {
+@media  screen and  (max-width: 1420px) {
 #treesleft {
 margin-left:10%;
 }
 }
 
-@media (max-width: 700px) {
+@media  screen and (max-width: 700px) {
 #treesleft {
 margin-left:4%;
 margin-top:-20px;
@@ -130,7 +130,7 @@ position:absolute;
 top:630px;
 }
 
-@media (max-width: 520px) {
+@media screen and (max-width: 520px) {
 #treesright {
 margin-top:30px;
 right:10px;
@@ -157,13 +157,13 @@ z-index:316;
 
 /*girl moved down slightly with query*/
 
-@media (max-width: 600px) {
+@media screen and  (max-width: 600px) {
 #girl {
 margin-top:60px;
 }
 }
 
-@media (max-width: 400px) {
+@media screen and  (max-width: 400px) {
 #girl {
 margin-top:80px;
 }
@@ -190,13 +190,13 @@ z-index:815;
 
 /*sign made slightly smaller and adjusted*/
 
-@media (max-width: 1186px) {
+@media screen and  (max-width: 1186px) {
 #safosign {
 margin-left:70%;
 }
 }
 
-@media (max-width: 600px) {
+@media screen and  (max-width: 600px) {
 #safosign {
 margin-left:72%;
 height:20%;
@@ -205,7 +205,7 @@ margin-top:-100px;
 }
 }
 
-@media (max-width: 400px) {
+@media screen and  (max-width: 400px) {
 #safosign {
 margin-left:70%;
 margin-top:-200px;
@@ -233,14 +233,14 @@ top:760px;
 z-index:300;
 }
 
-@media (max-width: 600px) {
+@media screen and  (max-width: 600px) {
 #rocks {
 top:800px;
 }
 }
 
 
-@media (max-width: 400px) {
+@media screen and  (max-width: 400px) {
 #rocks {
 top:860px;
 }
@@ -353,7 +353,7 @@ top:1000px;
 z-index:15;
 }
 
-@media (max-width: 450px) {
+@media screen and  (max-width: 450px) {
 #bonesright {
 margin-top:170px;
 margin-right:40px;
@@ -381,41 +381,41 @@ bottom:0px;
 
 /*app query adds extra padding to top*/
 
-@media (max-width: 2150px) {
+@media screen and  (max-width: 2150px) {
 #app  {
 padding-top:30%;
 height:800px;
 }
 }
 
-@media (max-width: 1842px) {
+@media screen and  (max-width: 1842px) {
 #app  {
 padding-top:35%;
 height:800px;
 }
 }
 
-@media (max-width: 1700px) {
+@media screen and  (max-width: 1700px) {
 #app  {
 padding-top:39%;
 height:800px;
 }
 }
 
-@media (max-width: 1400px) {
+@media screen and  (max-width: 1400px) {
 #app  {
 padding-top:40%;
 height:800px;
 }
 }
 
-@media (max-width: 830px) {
+@media screen and  (max-width: 830px) {
 #app  {
 padding-top:50%;
 }
 }
 
-@media (max-width: 680px) {
+@media screen and  (max-width: 680px) {
 #app  {
 padding-top:65%;
 }
@@ -424,13 +424,13 @@ padding-top:65%;
 
 
 
-@media (max-width: 500px) {
+@media screen and  (max-width: 500px) {
 #app  {
 padding-top:75%;
 }
 }
 
-@media (max-width: 435px) {
+@media screen and  (max-width: 435px) {
 #app  {
 padding-top:90%;
 }
@@ -460,21 +460,21 @@ margin-left:28%;
 margin-bottom:30px;
 }
 
-@media (max-width: 1842px) {
+@media screen and  (max-width: 1842px) {
 #phone {
 margin-top:-60px;
 margin-left:20%;
 }
 }
 
-@media (max-width: 1700px) {
+@media screen and  (max-width: 1700px) {
 #phone {
 margin-top:-20px;
 margin-left:18%;
 }
 }
 
-@media (max-width: 1205px) {
+@media screen and  (max-width: 1205px) {
 #phone {
 margin-top:-20px;
 margin-left:20%;
@@ -486,7 +486,7 @@ height:80%px;
 }
 
 
-@media (max-width: 550px) {
+@media screen and  (max-width: 550px) {
 #phone {
 margin-top:0px;
 margin-left:10%;
@@ -506,21 +506,21 @@ top:0px;
 z-index:900;
 }
 
-@media (max-width: 1200px) {
+@media screen and  (max-width: 1200px) {
 #appcont  {
 margin-left:20%;
 }
 }
 
 
-@media (max-width: 450px) {
+@media screen and  (max-width: 450px) {
 #appcont  {
 margin-top:-40px;
 margin-left:10%;
 }
 }
 
-@media (max-width: 400px) {
+@media screen and  (max-width: 400px) {
 #appcont  {
 margin-top:-60px;
 margin-left:10%;
@@ -549,7 +549,7 @@ opacity:0.8;
 filter:alpha(opacity=80);
 }
 
-@media (max-width: 420px) {
+@media screen and  (max-width: 420px) {
 #download  {
 margin-bottom:-200px;
 }
@@ -702,13 +702,13 @@ max-width:100%;
 
 /*switches ribbon image to something smaller-relates to wrapper-puppets-welcome*/
 
-@media (max-width: 800px) {
+@media screen and  (max-width: 800px) {
 #ribbon {
 top:-10px;
 }
 }
 
-@media (max-width: 400px) {
+@media screen and  (max-width: 400px) {
 #ribbon {
 min-width:350px;
 }
@@ -739,7 +739,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8de0f4', end
 
 /*wrapper gets smaller to make sky work-switches gradient-puppets and welcome must be adjusted with it*/
 
-@media (max-width: 600px) {
+@media screen and  (max-width: 600px) {
 #wrapper {
 margin-top:-400px;
 
@@ -755,7 +755,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8de0f4', end
 }
 }
 
-@media (max-width: 400px) {
+@media screen and  (max-width: 400px) {
 #wrapper {
 margin-top:-550px;
 background: #8de0f4; /* Old browsers */
@@ -856,13 +856,13 @@ z-index: 100;
 }
 
 
-@media (max-width: 600px) {
+@media screen and  (max-width: 600px) {
 #vinevidwrapper {
 margin-top:-250px;
 }
 }
 
-@media (max-width: 400px) {
+@media screen and  (max-width: 400px) {
 #vinevidwrapper {
 margin-top:-450px;
 }
@@ -1054,7 +1054,7 @@ height: 100%;
 display: block;
 }
 
-@media (max-width: 440px) {
+@media screen and  (max-width: 440px) {
 .caroufredsel_wrapper .slides .slide img{
 display: block;
 margin-left: -34px;
@@ -1163,7 +1163,7 @@ height:auto;
 
 
 
-@media (max-width: 440px) {
+@media screen and (max-width: 440px) {
 #talk img {
 max-width:300px;
 margin-left:35px;
