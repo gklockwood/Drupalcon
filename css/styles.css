@@ -1,4 +1,4 @@
-/***
+app/***
 TABLE OF CONTENTS
 
 BODY - margin 0 important!
@@ -421,11 +421,7 @@ padding-top:65%;
 }
 }
 
-@media (max-width: 600px) {
-#app {
-background:#bf2e1f;
-}
-}
+
 
 
 @media (max-width: 500px) {
@@ -573,12 +569,6 @@ height:1200px;
 position:absolute;
 float:left;
 top:2400px;
-}
-
-@media (max-width: 600px) {
-#film {
-background:#00d1af;
-}
 }
 
 
