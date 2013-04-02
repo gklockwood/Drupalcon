@@ -1,4 +1,0 @@
-Drupalcon
-=========
-
-Drupalcon Oregon 

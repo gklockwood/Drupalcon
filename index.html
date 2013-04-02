@@ -1,58 +1,77 @@
 <!DOCTYPE html>
 <html>
-
-
 <head>
-<title></title>
+
+<title>DrupalCon Oregon</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
 <link rel='stylesheet' href='css/styles.css' />
-
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-
 <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
-
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-
 <script src="js/jqfloat.min.js"></script>
 
+<!--
+TABLE OF CONTENTS: JAVASCRIPT
 
-
-
-
+PUPPET DROP SCRIPT: drops puppets into place 
+PUPPET KEY SCIPT: key events 
+CONTROL SCRIPT: fades controls in and out on onload
+CONTROL INFO SCRIPT: this is a list that upon rollover reveals the key commands for the puppets
+-->
 
 <style type="text/css">
-/*key areas:
-man body
-bear body
-controls
-clouds
-*/
+/***
+TABLE OF CONTENTS: CSS
+
+HOLDER: controls where the puppets stop falling
+PUPPETDROP: drops the puppets down
+MAN-N - man - wrapper
+BEAR-C - bear - wrapper
+MANBODY - man - body
+BEARBODY - bear - body
+BEAR-A - bear - head 
+BEAR-S - bear - arm top
+BEAR-D - bear - arm bottom
+MAN-J - man - head 
+MAN-K - man - arm top  
+MAN-L - man - arm bottom 
+CONTROLS - for key strokes, hovers over puppets on onload 
+CONTROL INFO - this is a tab people can roll over info about the controls
+***/
+
+/*IMPORTANT!! this controls where the puppests stop dropping*/
 
 
-
-
+/***
+HOLDER
+***/
 #holder {
 position: absolute;
 top: 200px;
 left: 100px;  
 }
 
-#dropcont2
+/***
+PUPPETDROP
+***/
+#puppetdrop
 {
 max-width:680px;
 max-height:681px;
 min-width:250px;
-width:85%;
-margin:auto;
+width:75%;
+margin-left:auto;
+margin-right:auto;
 }
 
-/*overall wrapping for man-gets key command with p*/
+/***
+MAN - START
+***/
 
-.man-p {
+.man-n {
 display: none;
 margin-top:-680px;
 margin-right:20px;
@@ -64,167 +83,18 @@ z-index:100;
 position:relative;
 }
 
-
-
-
-
-
-/*man body: this is same as man-p, but must be in sep wrapper for z-index*/
-
 .manbody {
 background: url(img/manbody.png) no-repeat center;
 background-position: center;
 background-size: 100%;
 margin-top: -1361px;
-margin-right: auto;
+margin-right:10px;
 width: 100%;
 height: 32%;
 height: 681px;
 z-index: 550;
 position: relative;
 }
-
-
-
-@media (max-width: 400px) {
-.manbody  {
-right:-8px;
-}
-}
-
-
-/*overall wrapping for bear-gets key command with q*/
-
-.bear-q  {
-display: none;
-margin-top:-2900px;
-margin-left:20px;
-margin-right:auto;
-width:32%;
-height:32%;
-height:681px;
-z-index:50;
-position:relative;
-}
-
-@media (max-width: 700px) {
-.bear-q {
-margin-top:-2900px;
-}
-}
-
-
-@media (max-width: 600px) {
-.bear-q {
-margin-top:-2800px;
-}
-}
-
-/*bear body: this is same as bear-q, but must be in sep wrapper for z-index*/
-
-.bearbody {
-background: url(img/bearbody.png) no-repeat center;
-background-position: center;
-background-size: 100%;
-margin-top: -342px;
-margin-left: 20px;
-margin-right: auto;
-width: 100%;
-height: 32%;
-height: 681px;
-z-index: 550;
-position: relative;
-}
-
-
-@media (max-width: 400px) {
-.bearbody  {
-left:-8px;
-}
-}
-
-/*bear arms: the following are the arms and head for the bear*/
-
-.bear-a {
-background: url(img/bearhead.png) no-repeat;
-background-size: 100%;
-background-position: center bottom;
-top: -480px;
-margin-left: 65%;
-max-width: 180px;
-width: 85%;
-height: 100%;
-z-index: 600;
-position:relative;
-}
-
-
-@media (max-width: 735px){
-.bear-a {
-top: -70%;
-}
-}
-
-@media (max-width: 710px){
-.bear-a {
-top: -67%;
-}
-}
-
-@media (max-width: 650px){
-.bear-a {
-top: -65%;
-}
-}
-
-@media (max-width: 540px){
-.bear-a {
-top: -64%;
-}
-}
-
-
-@media (max-width: 514px) {
-.bear-a {
-top: -63%;
-}
-}
-
-@media (max-width: 500px) {
-.bear-a {
-top: -61%;
-}
-}
-
-.bear-s {
-background: url(img/beararmt.png) no-repeat;
-background-size: 100%;
-background-position: center bottom;
-margin-top:-1020px;
-margin-left: 40%;
-max-width: 180px;
-width: 88%;
-height: 100%;
-z-index: 603;
-position:relative;
-}
-
-
-.bear-d {
-background: url(img/beararmb.png) no-repeat;
-background-size: 100%;
-background-position: center bottom;
-margin-top:-1040px;
-margin-left: 55%;
-max-width: 180px;
-width: 95%;
-height: 100%;
-z-index: 29;
-position:relative;
-}
-
-/*man arms: the following are the arms and head for the man*/
-
 
 .man-j
 {
@@ -242,24 +112,22 @@ z-index:605;
 
 @media all and (max-width: 735px) and (min-width: 651px) {
 .man-j {
-top: -69%;
+top: -65%;
 }
 }
 
 @media all and (max-width: 650px) and (min-width: 516px) {
 .man-j {
-top: -66%;
+top: -63%;
 }
 }
 
 
 @media all and (max-width: 515px) and (min-width: 200px) {
 .man-j {
-top: -61%;
+top: -59%;
 }
 }
-
-
 
 .man-k {
 background: url(img/rightarm.png) no-repeat;
@@ -287,7 +155,152 @@ height: 100%;
 z-index:69;
 }
 
-/*clouds: following are the clouds, these cause the most problems with vertical scrolling*/
+/***
+MAN AREA - END
+***/
+
+
+
+/***
+BEAR - START
+***/
+
+.bear-c  {
+display: none;
+margin-top:-2900px;
+margin-left:20px;
+margin-right:auto;
+width:32%;
+height:32%;
+height:681px;
+z-index:50;
+position:relative;
+}
+
+@media (max-width: 700px) {
+.bear-c {
+margin-top:-2900px;
+}
+}
+
+@media (max-width: 600px) {
+.bear-c {
+margin-top:-2820px;
+}
+}
+
+.bearbody {
+background: url(img/bearbody.png) no-repeat center;
+background-position: center;
+background-size: 100%;
+margin-top: -342px;
+margin-left: 10px;
+margin-right: auto;
+width: 100%;
+height: 32%;
+height: 681px;
+z-index: 550;
+position: relative;
+}
+
+@media (max-width: 400px) {
+.bearbody  {
+left:-8px;
+}
+}
+
+.bear-a {
+background: url(img/bearhead.png) no-repeat;
+background-size: 100%;
+background-position: center bottom;
+top: -480px;
+margin-left: 58%;
+max-width: 180px;
+width: 85%;
+height: 100%;
+z-index: 600;
+position:relative;
+}
+
+@media (max-width: 735px){
+.bear-a {
+top: -70%;
+}
+}
+
+@media (max-width: 710px){
+.bear-a {
+top: -67%;
+}
+}
+
+@media (max-width: 650px){
+.bear-a {
+top: -64%;
+}
+}
+
+@media (max-width: 540px){
+.bear-a {
+top: -63%;
+}
+}
+
+
+@media (max-width: 514px) {
+.bear-a {
+top: -61%;
+}
+}
+
+@media (max-width: 500px) {
+.bear-a {
+top: -59%;
+}
+}
+
+.bear-s {
+background: url(img/beararmt.png) no-repeat;
+background-size: 100%;
+background-position: center bottom;
+margin-top:-1020px;
+margin-left: 40%;
+max-width: 180px;
+width: 88%;
+height: 100%;
+z-index: 603;
+position:relative;
+}
+
+.bear-d {
+background: url(img/beararmb.png) no-repeat;
+background-size: 100%;
+background-position: center bottom;
+margin-top:-1040px;
+margin-left: 55%;
+max-width: 180px;
+width: 95%;
+height: 100%;
+z-index: 29;
+position:relative;
+}
+
+
+/***
+BEAR - END
+***/
+
+
+/***
+CLOUDS 
+***/
+
+
+
+/***
+CLOUD - LEFT
+***/
+
 
 #cloudleft
 {
@@ -305,7 +318,6 @@ top:-1350px;
 z-index:8;
 }
 
-
 @media (max-width: 500px) {
 #cloudleft {
 margin-top:45%;
@@ -322,6 +334,14 @@ margin-left:5%;
 }
 }
 
+
+/***
+CLOUD - LEFT - END
+***/
+
+/***
+CLOUD - RIGHT 
+***/
 
 
 #cloudright
@@ -364,8 +384,6 @@ left:45%;
 }
 }
 
-
-/*cloud: this hides the right cloud in smaller view*/
 @media (max-width: 660px) {
 #cloudright {
 display:none;
@@ -378,7 +396,21 @@ display:none;
 }
 }
 
-/*controls:*/
+/***
+CLOUD - RIGHT - END
+***/
+
+
+/***
+CLOUDS - END
+***/
+
+
+
+/***
+CONTROLS: this div overlays the actual puppets to demonstrate what the letters control
+***/
+
 
 #controls
 { 
@@ -397,15 +429,13 @@ z-index:900;
 
 }
 
-/*controls: drop down because of wrapper and ribbon query*/
-
 @media (max-width: 700px) {
 #controls {
 top:-10px;
 min-height:327px;
 max-width:432px;
-height:65%;
-width:65%;
+height:55%;
+width:55%;
 }
 }
 
@@ -414,8 +444,8 @@ width:65%;
 top:-10px;
 min-height:327px;
 max-width:432px;
-height:65%;
-width:65%;
+height:55%;
+width:55%;
 }
 }
 
@@ -425,18 +455,487 @@ top:-20px;
 top:-10px;
 min-height:327px;
 max-width:432px;
-height:65%;
-width:65%;
+height:55%;
+width:55%;
 }
 }
 
+/***
+CONTROLS - END
+***/
+
+
+/***
+CONTROL INFO: this is mini sidebar that upon hover will reveal the key commands for moving the puppets 
+***/
+
+
+/*
+fl_menu: main container for the control info
+*/
+#fl_menu
+{
+position:absolute fixed; 
+margin-top:-2980px; 
+left:0px; 
+z-index:9999; 
+width:150px; 
+height:50px;
+}
+
+@media (max-width: 600px) {
+#fl_menu  {
+margin-top:-2750px; 
+right:0px;
+}
+}
+
+@media (max-width: 400px) {
+#fl_menu  {
+display:none;
+}
+}
+
+
+#fl_menu .label
+{
+padding-left:20px; 
+line-height:50px; 
+font-family: 'Amatic SC', Helvetica, sans-serif;
+font-weight:400; 
+font-size:25px; 
+font-weight:bold; 
+background:#82CCE6; 
+color:#fff; 
+letter-spacing:3px;
+width:100px;
+opacity:.5;
+}
+
+
+#fl_menu .menu
+{
+display:none;
+margin-top:0px;
+margin-left:-40px;
+}
+
+
+#fl_menu .menu .menu_item
+{
+display:block; 
+background:#82CCE6; 
+color:#fff; 
+border-top:1px dashed #fff; 
+padding:10px 10px; 
+font-family: 'Amatic SC', Helvetica, sans-serif;
+font-weight:700; 
+letter-spacing:1.5px;
+font-size:20px; 
+text-decoration:none;
+width:100px;
+z-index:9999;
+}
+/***
+CONTROL INFO END
+***/
+
+
+
+#splash
+{
+position:relative;
+top:-100%;
+z-index: 1000;
+max-width:795px;
+width:100%;
+height:300px;
+}
+
+
+
+
+@media (max-width: 1100px) {
+#splash {
+position:relative;
+padding-top:48%;
+z-index: 1000;
+max-width:795px;
+width:100%;
+height:100%;
+}
+}
+
+
+#waterrv
+{
+background: url(img/splashvr.png) no-repeat; 
+background-size:100% auto;
+background-position: center top;
+position:relative;
+margin-top:-70px;
+z-index: 999;
+max-width:800px;
+width:100%;
+height:100%;
+}
+
+
+
+@media (max-width: 1100px) {
+#waterrv {
+opacity:0;
+}
+}
+
+
+
+
+#waterap{
+max-width:580px;
+width:72%;
+margin:0 auto;
+overflow:hidden;
+}
+
+
+#water{
+height:450px; 
+background: url(img/watertx.jpg) repeat-y scroll left top;
+text-align:center;
+z-index:4;
+opacity:0.6;
+overflow:hidden;
+}
+
+@media (max-width: 1280px) {
+#water {
+height:420px;
+}
+}
+@media (max-width: 1150px) {
+#water {
+height:400px;
+}
+}
+
+@media (max-width: 1100px) {
+#water {
+display:none;
+}
+}
+
+
+/*
+bubbles css
+*/
+
+
+#bubble1 {
+position:absolute;
+left:30%;
+width:30px;
+height:30px;
+background-color:#fff;
+-moz-border-radius: 15px;
+border-radius: 15px;
+margin-bottom:950px;
+z-index:999;
+}
+@media (max-width: 1100px) {
+#bubble1  {
+margin-bottom:1250px;
+}
+}
+@media (max-width: 850px) {
+#bubble1  {
+margin-bottom:1450px;
+width:14px;
+height:14px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+}
+}
+@media (max-width: 600px) {
+#bubble1  {
+margin-bottom:1850px;
+}
+}
+@media (max-width: 400px) {
+#bubble1  {
+margin-bottom:2050px;
+
+}
+}
+
+
+#bubble2 {
+position:absolute;
+left:20%;
+width:20px;
+height:20px;
+background-color:#fff;
+-moz-border-radius: 10px;
+border-radius: 10px;
+margin-bottom:1100px;
+z-index:999;
+}
+@media (max-width: 1100px) {
+#bubble2  {
+margin-bottom:1400px;
+}
+}
+@media (max-width: 850px) {
+#bubble2  {
+margin-bottom:1600px;
+width:10px;
+height:10px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+}
+@media (max-width: 600px) {
+#bubble2  {
+margin-bottom:2000px;
+}
+}
+@media (max-width: 400px) {
+#bubble2  {
+margin-bottom:2100px;
+
+}
+}
+#bubble3 {
+position:absolute;
+left:60%;
+width:26px;
+height:26px;
+background-color:#fff;
+-moz-border-radius: 12px;
+border-radius: 12px;
+margin-bottom:1050px;
+z-index:999;
+}
+@media (max-width: 1100px) {
+#bubble3  {
+margin-bottom:1350px;
+}
+}
+@media (max-width: 850px) {
+#bubble3  {
+margin-bottom:1550px;
+width:8px;
+height:8px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+}
+@media (max-width: 600px) {
+#bubble3  {
+margin-bottom:1950px;
+}
+}
+@media (max-width: 400px) {
+#bubble3  {
+margin-bottom:2050px;
+}
+}
+#bubble4 {
+position:absolute;
+left:50%;
+width:12px;
+height:12px;
+background-color:#fff;
+-moz-border-radius: 6px;
+border-radius: 6px;
+margin-bottom:1050px;
+z-index:999;
+}
+@media (max-width: 1100px) {
+#bubble4  {
+margin-bottom:1350px;
+}
+}
+@media (max-width: 850px) {
+#bubble4  {
+margin-bottom:1550px;
+width:14px;
+height:14px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+}
+}
+@media (max-width: 600px) {
+#bubble4  {
+margin-bottom:1950px;
+}
+}
+@media (max-width: 400px) {
+#bubble4  {
+margin-bottom:2050px;
+}
+}
+
+#bubble5 {
+position:absolute;
+left:30%;
+width:22px;
+height:22px;
+background-color:#fff;
+-moz-border-radius: 11px;
+border-radius: 11px;
+margin-bottom:1050px;
+z-index:999;
+}
+@media (max-width: 1100px) {
+#bubble5  {
+margin-bottom:1350px;
+}
+}
+@media (max-width: 850px) {
+#bubble5  {
+margin-bottom:1550px;
+width:10px;
+height:10px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+}
+@media (max-width: 600px) {
+#bubble5  {
+margin-bottom:1950px;
+}
+}
+@media (max-width: 400px) {
+#bubble5  {
+margin-bottom:2050px;
+}
+}
+#bubble6 {
+position:absolute;
+left:80%;
+width:20px;
+height:20px;
+background-color:#fff;
+-moz-border-radius: 10px;
+border-radius: 10px;
+margin-bottom:1100px;
+z-index:999;
+}
+@media (max-width: 1100px) {
+#bubble6  {
+margin-bottom:1300px;
+}
+}
+@media (max-width: 850px) {
+#bubble6  {
+margin-bottom:1500px;
+width:8px;
+height:8px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+}
+@media (max-width: 600px) {
+#bubble6  {
+margin-bottom:1900px;
+}
+}
+@media (max-width: 400px) {
+#bubble6  {
+margin-bottom:2000px;
+}
+}
+#bubble7 {
+position:absolute;
+left:65%;
+width:24px;
+height:24px;
+background-color:#fff;
+-moz-border-radius: 12px;
+border-radius: 12px;
+margin-bottom:1150px;
+z-index:999;
+}
+@media (max-width: 1100px) {
+#bubble7  {
+margin-bottom:1300px;
+}
+}
+@media (max-width: 850px) {
+#bubble7  {
+margin-bottom:1550px;
+width:12px;
+height:12px;
+-moz-border-radius:6px;
+border-radius: 6px;
+}
+}
+@media (max-width: 600px) {
+#bubble7  {
+margin-bottom:1900px;
+}
+}
+@media (max-width: 400px) {
+#bubble7  {
+margin-bottom:2000px;
+}
+}
+#bubble8 {
+position:absolute;
+left:45%;
+width:24px;
+height:24px;
+background-color:#fff;
+-moz-border-radius: 12px;
+border-radius: 12px;
+margin-bottom:1180px;
+z-index:999;
+}
+@media (max-width: 1100px) {
+#bubble8  {
+margin-bottom:1300px;
+}
+}
+@media (max-width: 850px) {
+#bubble8  {
+margin-bottom:1550px;
+width:14px;
+height:14px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+}
+}
+@media (max-width: 600px) {
+#bubble8  {
+margin-bottom:1900px;
+}
+}
+@media (max-width: 400px) {
+#bubble8  {
+margin-bottom:2000px;
+}
+}
+
+
+			
 </style>
 
+
+
+
+
+
+<!--
+
+PUPPET DROP SCRIPT
+
+-->
 
 <script>
 $(function() {
 setTimeout (function() {
-var $dropDiv = $('.bear-q');
+var $dropDiv = $('.bear-c');
 var mythis = $('#holder a');
 // get position of the element we clicked on
 var offset = mythis.offset();
@@ -471,7 +970,7 @@ opacity: 1
 
 $(function() {
 setTimeout (function() {
-var $dropDiv = $('.man-p');
+var $dropDiv = $('.man-n');
 var mythis = $('#holder a');
 // get position of the element we clicked on
 var offset = mythis.offset();
@@ -502,6 +1001,18 @@ opacity: 1
 });
 </script>
 
+<!--
+
+PUPPET DROP SCRIPT END
+
+-->
+
+
+<!--
+
+PUPPET KEY SCRIPT
+
+-->
 
 
 <script>
@@ -521,13 +1032,15 @@ $(".bear-" + letter).stop(true,false).animate({left:'120px'},
 {easing: 'easeInBack', duration:400}).animate({opacity: 1.0}, 200).animate({left:'0px'},{duration:400});
 }
 
+
+
 function manHead(letter){
-$(".man-" + letter).stop(true,false).animate({right:'40px'},
+$(".man-" + letter).stop(true,false).animate({right:'20px'},
 {easing: 'easeInBack', duration:80}).animate({opacity: 1.0}, 200).animate({right:'0px'},{duration:80});
 }
 
 function manArmTop(letter){
-$(".man-" + letter).stop(true,false).animate({right:'1xws0px'},
+$(".man-" + letter).stop(true,false).animate({right:'15px'},
 {easing: 'easeInBack', duration:80}).animate({opacity: 1.0}, 200).animate({right:'0px'},{duration:80});
 }
 
@@ -557,7 +1070,7 @@ $(".bear-" + letter).stop(true,false).animate({left:'30px'},
 $(document).keypress(function(e){
 
 
-if (e.which >= 113) {
+if (e.which >= 99) {
 bearBody(String.fromCharCode(e.which));
 }
 
@@ -574,7 +1087,7 @@ if (e.which >= 100 && e.which <= 100) {
 bearArmBack(String.fromCharCode(e.which));
 }
 
-if (e.which >= 112) {
+if (e.which >= 110) {
 manBody(String.fromCharCode(e.which));
 }
 
@@ -598,26 +1111,183 @@ manArmBack(String.fromCharCode(e.which));
 </script>
 
 
+<!--
+
+PUPPET SCRIPT END
+
+-->
+
+
+<!--
+
+CONTROL SCRIPT
+
+-->
 
 <script> 
-
 $(window).load(function () {
 $("#controls").hide(0).delay(2000).fadeIn(500).delay(1000).fadeOut(500)
 });
 </script>
 
+<!--
 
+PUPPET SCRIPT END
+
+-->
+
+
+<!--
+wtrb pulsate
+-->
+
+<script type="text/javascript">
+function zxcBAnimator(mde,obj,srt,fin,ms,scale,curve){
+ if (typeof(obj)=='string'){ obj=document.getElementById(obj); }
+ if (!obj||(!srt&&!fin)) return;
+ var oop=obj[mde.replace(/\W/g,'')+'oop'];
+ if (oop){
+  clearTimeout(oop.to);
+  if (oop.srtfin[0]==srt&&oop.srtfin[1]==fin&&mde.match('#')) oop.update([oop.data[0],(oop.srtfin[0]==oop.data[2])?fin:srt],ms,scale,curve);
+  else oop.update([srt,fin],ms,scale,curve);
+ }
+ else obj[mde.replace(/\W/g,'')+'oop']=new zxcBAnimatorOOP(mde,obj,srt,fin,ms,scale,curve);
+}
+
+function zxcBAnimatorOOP(mde,obj,srt,fin,ms,scale,curve){
+ this.srtfin=[srt,fin];
+ this.to=null;
+ this.obj=obj;
+ this.mde=mde.replace(/\W/g,'');
+ this.update([srt,fin],ms,scale,curve);
+}
+
+zxcBAnimatorOOP.prototype.update=function(srtfin,ms,scale,curve){
+ this.time=ms||this.time||2000;
+ this.data=[srtfin[0],srtfin[0],srtfin[1]];
+ this.ms=this.time*(!scale?1:Math.abs((srtfin[1]-srtfin[0])/(scale[1]-scale[0])));
+ this.curve=(typeof(curve)=='string')?curve.charAt(0).toLowerCase():(this.curve)?this.curve:'x';
+ this.inc=Math.PI/(2*this.ms);
+ this.srttime=new Date().getTime();
+ this.cng();
+}
+
+zxcBAnimatorOOP.prototype.cng=function(){
+ var ms=new Date().getTime()-this.srttime;
+ this.data[0]=(this.curve=='s')?Math.floor((this.data[2]-this.data[1])*Math.sin(this.inc*ms)+this.data[1]):(this.curve=='c')?(this.data[2])-Math.floor((this.data[2]-this.data[1])*Math.cos(this.inc*ms)):(this.data[2]-this.data[1])/this.ms*ms+this.data[1];
+ if (this.mde!='left'&&this.mde!='top'&&this.data[0]<0) this.data[0]=0;
+ if (this.mde!='opacity') this.obj.style[this.mde]=this.data[0]+'px';
+ else  zxcOpacity(this.obj,this.data[0]);
+ if (ms<this.ms) this.to=setTimeout(function(oop){return function(){oop.cng();}}(this),10);
+ else {
+  this.data[0]=this.data[2];
+  if (this.mde!='opacity') this.obj.style[this.mde]=this.data[0]+'px';
+  else zxcOpacity(this.obj,this.data[0]);
+ }
+}
+
+function zxcOpacity(obj,opc){
+ if (opc<0||opc>100) return;
+ obj.style.filter='alpha(opacity='+opc+')';
+ obj.style.opacity=obj.style.MozOpacity=obj.style.KhtmlOpacity=opc/100-.001;
+}
+
+/*]]>*/
+</script>
+
+<script language="JavaScript" type="text/javascript">
+/*<![CDATA[*/
+
+function Pulse(id,max,min,spd){
+ var oop=window[id+'pulse'];
+ if (!oop) window[id+'pulse']=oop=new PulseOOP(id,max,min,spd);
+ clearTimeout(oop.to);
+ if (max) oop.cng();
+ else zxcBAnimator('opacity',id,oop.max-1,oop.max,10);
+}
+
+function PulseOOP(id,max,min,spd){
+ this.id=id;
+ this.max=max||100;
+ this.min=min||30;
+ this.spd=spd||1000;
+ this.to=null;
+}
+
+PulseOOP.prototype.cng=function(){
+ zxcBAnimator('opacity#',this.id,this.max,this.min,this.spd);
+ this.to=setTimeout(function(oop){return function(){oop.cng();}}(this),this.spd);
+}
+
+/*]]>*/
+</script>
+
+
+<!--
+wtrb pulsate end
+-->
+
+
+<!--
+bubbles js
+-->
+
+<script language="javascript">
+
+$(document).ready(function(){
+
+//on window scroll fire it will call a function.
+
+$(window).scroll(function () {
+
+//after window scroll fire it will add define pixel added to that element.
+
+set = $(document).scrollTop()+"px";
+
+//this is the jQuery animate function to fixed the div position after scrolling.
+
+$('#bubble1').animate({bottom:set},{duration:10,queue:false});
+
+
+$('#bubble2').animate({bottom:set},{duration:60,queue:false});
+
+
+$('#bubble3').animate({bottom:set},{duration:40,queue:false});
+
+
+$('#bubble4').animate({bottom:set},{duration:30,queue:false});
+
+
+$('#bubble5').animate({bottom:set},{duration:20,queue:false});
+
+$('#bubble6').animate({bottom:set},{duration:70,queue:false});
+
+$('#bubble7').animate({bottom:set},{duration:10,queue:false});
+
+$('#bubble8').animate({bottom:set},{duration:70,queue:false});
+
+});
+
+});
+
+
+
+
+</script>
 
 </head>
-
-
 
 <body>
 
 
-
+<!--ribbon: outside of wrapper to keep in front-->
 <div id="ribbon"></div>
-<div id="safosign"></div>
+
+
+<!--saforian sign: also outside of main wrapper to keep in front-->
+<a href="http://www.saforian.com/" target="_blank"><div id="safosign"></div></a>
+
+<!--main wrapper: holds most of the divs-->
 
 <div id="wrapper">
 
@@ -627,7 +1297,66 @@ $("#controls").hide(0).delay(2000).fadeIn(500).delay(1000).fadeOut(500)
 <div id="grass"><div id="wtrt"></div></div>
 <div id="grassb"></div>
 <div id="dirt"></div>
-<div id="wtrb"></div>
+<div id="wtrb">
+
+
+<div id="waterap">
+<div id="water">
+</div>
+</div>
+
+<div id="waterrv">
+</div>			
+
+
+<div id="splash">
+<img id="p1" src="img/splashv.png" alt="Image" width="100%" height="auto"
+onload="Pulse('splash',100,5,500);"
+/>
+
+</div>
+
+
+
+<!--
+bubbles div
+-->
+
+
+<div id="bubble1">
+</div>
+
+<div id="bubble2">
+</div>
+        
+ <div id="bubble3">
+</div>
+
+<div id="bubble4">
+</div>
+
+<div id="bubble5">
+</div>
+
+
+<div id="bubble6">
+</div>
+
+<div id="bubble7">
+</div>
+
+<div id="bubble8">
+</div>
+
+
+
+</div>
+
+
+       
+<!--this dive contails the app portion with two nested divs-->
+
+
 <div id="app"><div id="phone"></div><div id="appcont">
 <p>With our app, you won’t be sitting around saying, “Well 
 I don’t know… What do you wanna do?” We’ve researched, 
@@ -642,13 +1371,26 @@ connect with other Drupal lovers.
 <a href="#" target="_blank"><div id="download"></div></a>
 </div></div>
 
-
+<!--end of app portion-->
 
 <div id="film">
 <div id="filmheading"> </div>
-<div id="filmshare"> </div>
+<a href="#" target="_blank"><div id="filmshare"> </div></a>
+
 </div>
-<div id="footer"></div>
+
+
+<div id="footer">
+
+<a href="http://www.saforian.com/" target="_blank"><div id="talk">
+<img src="img/interested.png" alt="interested"
+/>
+</div></a>
+
+</div>
+
+
+
 <div id="treesleft"></div>
 <div id="treesright"></div>
 <div id="girl"></div>
@@ -656,6 +1398,10 @@ connect with other Drupal lovers.
 <div id="bonesright"></div>
 <div id="cloudleft"></div>
 <div id="cloudright"></div>
+
+
+
+
 <div id="rocks"></div>
 <div id=""></div>
 </div>
@@ -663,25 +1409,243 @@ connect with other Drupal lovers.
 <div id="holder"><a href="javascript:void(0);" id="main"></a></div>
 
 
-<div id="dropcont2">
+<!--the tontainer that holds the puppets that drops down-->
+
+<div id="puppetdrop">
 
 
-<div class="bear-q">
+<div class="bear-c">
 <div class="bear-a"></div>
 <div class="bear-s"></div>
 <div class="bearbody"></div>
 <div class="bear-d"></div>
 </div>
 
-<div class="man-p">
+<div class="man-n">
 <div class="man-j"></div>
 <div class="man-k"></div>
 <div class="manbody"></div>
 <div class="man-l"></div>
+
+<!--end main wrapper-->
 </div>
 
 
+
+<!--end of puppest container-->
+
+
+<!--
+controls that go over puppets
+-->
+
 <div id="controls"> </div>
+
+<!--
+end of controls
+-->
+
+
+<!--
+
+start of vine video slider
+
+-->
+
+<section id="vinevidwrapper" class='vinevids offwhite' data-section='safo-methodology'>
+
+<div class='method-section our-services'>
+<div class="method-group">
+<section id="media-slider" class="vine-text-slider" data-duration="500"  data-slider="slider" data-height="500" data-items="1">
+<div class="slider-wrap">
+<section class="slides group">
+
+<!-- slide -->
+<div class="slide">
+<article class="body">
+<span class="vine">
+<img src="img/bear1.jpeg">
+</span>
+
+</article>
+</div>
+<!-- end slide -->
+
+<!-- slide -->
+<div class="slide active">
+<article class="body">
+<span class="vine">
+<img src="img/bear2.jpeg">
+</span>
+
+</article>
+</div>
+<!-- end slide -->
+
+<!-- slide -->
+<div class="slide">
+<article class="body">
+<span class="vine">
+<img src="img/bear3.jpeg">
+</span>
+
+</article>
+</div>
+<!-- end slide -->
+
+<!-- slide -->
+<div class="slide">
+<article class="body">
+<span class="vine">
+<img src="img/bear4.jpg">
+</span>
+
+</article>
+</div>
+
+<div class="slide">
+<article class="body">
+<span class="vine">
+<img src="img/bearphoto.jpg">
+</span>
+
+</article>
+</div>
+<!-- end slide -->
+
+</section>
+<div class="next-prev">
+<a href="#" class="next-slide"><span class="inner"></span></a>
+<a href="#" class="prev-slide"><span class="inner"></span></a>
+</div>
+<!-- slider pagination -->
+
+<div class="pag-wrap alt">
+<div id="center">
+<a href="#" class="prev-slide"><span class="inner">prev</span></a>
+<a href="#" class="next-slide"><span class="inner">next</span></a>
+</div>
+</div>
+
+
+</section>
+
+<!--end of vine video slider-->
+
+<!--scripts for vine video slider-->
+
+<script type="text/javascript" src="js/carouFredSel.min.js"></script>
+<script type='text/javascript' src='js/waypoints.min.js'></script>
+<script type="text/javascript" src="js/jquery.localscroll-min.js"></script>
+<script type='text/javascript' src='js/safo.js'></script>
+
+<!--end of scripts for vine video slider-->
+
+
+
+
+<div id="fl_menu">
+<div class="label">CONTROLS</div>
+<ul class="menu">
+<li class="menu_item">bear body: c</li>
+<li class="menu_item">bear head: a</li>
+<li class="menu_item">bear arms: s - d</li>
+<li class="menu_item">man body: n</li>
+<li class="menu_item">man head: j</li>
+<li class="menu_item">man arms: k - l</li>
+</ul>
+</div>
+</div>
+
+
+
+<!--
+CONTROL INFO SCRIPT
+-->
+
+<script>
+//config
+$float_speed=1500; //milliseconds
+$float_easing="easeOutQuint";
+$menu_fade_speed=500; //milliseconds
+$closed_menu_opacity=0.75;
+
+//cache vars
+$fl_menu=$("#fl_menu");
+$fl_menu_menu=$("#fl_menu .menu");
+$fl_menu_label=$("#fl_menu .label");
+
+$(window).load(function() {
+menuPosition=$('#fl_menu').position().top;
+FloatMenu();
+$fl_menu.hover(
+function(){ //mouse over
+$fl_menu_label.fadeTo($menu_fade_speed, 1);
+$fl_menu_menu.fadeIn($menu_fade_speed);
+},
+function(){ //mouse out
+$fl_menu_label.fadeTo($menu_fade_speed, $closed_menu_opacity);
+$fl_menu_menu.fadeOut($menu_fade_speed);
+}
+);
+});
+
+$(window).scroll(function () { 
+	FloatMenu();
+});
+
+function FloatMenu(){
+	var scrollAmount=$(document).scrollTop();
+	var newPosition=menuPosition+scrollAmount;
+	if($(window).height()<$fl_menu.height()+$fl_menu_menu.height()){
+		$fl_menu.css("top",menuPosition);
+	} else {
+		$fl_menu.stop().animate({top: newPosition}, $float_speed, $float_easing);
+	}
+}
+
+</script>
+
+<!--
+CONTROL INFO SCRIPT END
+-->
+
+
+
+<script type="text/javascript" charset="utf-8">
+		
+			var scrollSpeed = 10; 		// Speed in milliseconds
+			var step = -1; 				// How many pixels to move per step
+			var current = 0;			// The current pixel row
+			var imageHeight = 500;		// Background image height
+			var headerHeight = 300;		// How tall the header is.
+			
+			//The pixel row where to start a new loop
+			var restartPosition = -(imageHeight - headerHeight);
+			
+			function scrollBg(){
+				
+				//Go to next pixel row.
+				current -= step;
+				
+				//If at the end of the image, then go to the top.
+				if (current == restartPosition){
+					current = 0;
+				}
+				
+				//Set the CSS of the header.
+				$('#water').css("background-position","0 "+current+"px");
+				
+				
+			}
+			
+			//Calls the scrolling function repeatedly
+			var init = setInterval("scrollBg()", scrollSpeed);
+
+			
+	</script>	
+
+
 
 
 </body>
