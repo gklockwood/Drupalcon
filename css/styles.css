@@ -1003,7 +1003,9 @@ display: block;
 color: #ffffff;
 }
 .vine-text-slider .next-prev {
-height: 20px;
+height: 380px;
+width:380px;
+margin-top:-400px;
 }
 .vine-text-slider .next-prev .next-slide {
 top: 0;
