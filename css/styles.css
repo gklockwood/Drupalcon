@@ -1174,6 +1174,77 @@ margin-left:35px;
 }
 
 
+#socialmedia
+{
+margin: 0px;
+padding: 0px;
+position:absolute;
+right:50px;
+bottom:80px;
+}
+
+
+
+@media screen and (max-width: 920px) {
+#socialmedia {
+bottom: 20px;
+}
+}
+
+
+#socialmedia ul
+{
+margin: 0px;
+padding: 0px;
+list-style-type: none;
+text-align: left;
+}
+
+#socialmedia ul li { float: left; }
+
+#socialmedia ul li a
+{
+text-decoration: none;
+font-size: 10px/12px;
+float: left;
+margin: 0px;
+height: 30px;
+width: 30px;
+padding-top: 10px;
+padding-right: 10px;
+padding-bottom: 0px;
+padding-left: 30px;
+}
+
+#socialmedia ul li:hover
+{
+opacity:0.6;
+}
+
+
+#twitter
+{
+background: url(../img/icon_twitter.png) no-repeat center; 
+background-size:30px 30px;
+background-position: center top;
+}
+
+#vine
+{
+background: url(../img/icon_vine.png) no-repeat center; 
+background-size:30px 30px;
+background-position: center top;
+}
+
+
+#facebook
+{
+background: url(../img/icon_facebook.jpg) no-repeat center; 
+background-size:30px 30px;
+background-position: center top;
+}
+
+
 
 
 
