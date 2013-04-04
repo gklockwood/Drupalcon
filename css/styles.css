@@ -464,17 +464,15 @@ z-index:999;
 #phone {
 margin-top:-60px;
 margin-left:20%;
-max-width:500px;
-max-height:606px;
-width:80%;
-height:606px;
+max-width:700px;
+
 }
 }
 
 @media screen and  (max-width: 1700px) {
 #phone {
 margin-top:-20px;
-margin-left:18%;
+margin-left:10%;
 }
 }
 
@@ -482,20 +480,27 @@ margin-left:18%;
 #phone {
 margin-top:-20px;
 margin-left:20%;
-max-width:400px;
-max-height:485px;
-width:80%;
-height:80%px;
+max-width:550px;
+margin-bottom:-260px;
 }
 }
 
 
-@media screen and  (max-width: 550px) {
+@media screen and  (max-width: 700px) {
 #phone {
 margin-top:0px;
-margin-left:10%;
+right:90px;
+margin-bottom:-220px;
 }
 }
+
+@media screen and  (max-width: 450px) {
+#phone {
+right:80px;
+margin-bottom:-260px;
+}
+}
+
 
 
 #appcont
