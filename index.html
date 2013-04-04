@@ -531,10 +531,22 @@ CONTROL INFO END
 
 
 
-#splash
+#splashpos
 {
 position:relative;
 top:-100%;
+z-index: 1000;
+max-width:795px;
+width:100%;
+height:300px;
+}
+
+
+
+#splash
+{
+position:relative;
+top:0%;
 z-index: 1000;
 max-width:795px;
 width:100%;
@@ -1304,14 +1316,14 @@ $('#bubble8').animate({bottom:set},{duration:70,queue:false});
 <div id="waterrv">
 </div>			
 
-
+<div id="splashpos">
 <div id="splash">
 <img id="p1" src="img/splashv.png" alt="Image" width="100%" height="auto"
 onload="Pulse('splash',100,5,500);"
 />
-
 </div>
-
+<div id="definitive"></div>
+</div>
 
 
 <!--
