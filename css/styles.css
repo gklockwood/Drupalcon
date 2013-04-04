@@ -444,17 +444,17 @@ padding-top:90%;
 /*appcontent: phone / text*/
 
 #phone {
-background: url(../img/phone.png);
+background: url(../img/phoneshadow.png);
 background-size: 100%;
 background-position: center top;
 background-repeat: no-repeat;
-max-width: 600px;
-max-height: 730px;
-width: 80%;
-height: 730px;
+max-width: 750px;
+max-height: 875px;
+width: 100%;
+height: 875px;
 position: relative;
 float: left;
-margin-left: 22%;
+margin-left: 18%;
 margin-top:-40px;
 margin-bottom:40px;
 z-index:999;
@@ -497,21 +497,6 @@ margin-left:10%;
 }
 }
 
-#phoneshadow {
-background: url(../img/phoneshadow.png);
-background-size: 100%;
-background-position: center top;
-background-repeat: no-repeat;
-max-width: 600px;
-max-height: 400px;
-width: 100%;
-height: 400px;
-position: relative;
-float: left;
-
-margin-top: 110%;
-z-index:990;
-}
 
 #appcont
 {
@@ -521,7 +506,7 @@ max-height:320px;
 width:80%;
 height:80%;
 float:left;
-margin-left:4%;
+
 top:0px;
 z-index:1000;
 }
