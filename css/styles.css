@@ -1103,7 +1103,7 @@ PREV NEXT BUTTONS
 width: 100%;
 position: absolute;
 left: 0;
-bottom: -170px;
+bottom: -160px;
 }
 
 #center
@@ -1120,6 +1120,12 @@ font-family: 'Amatic SC', Helvetica, sans-serif;
 font-weight:700; 
 font-size:25px;
 margin-top200px;
+}
+
+@media (max-width: 640px) {
+.pag-wrap {
+bottom: -50px;
+}
 }
 
 @media (max-width: 440px) {
