@@ -33,6 +33,7 @@ font-family: 'Open Sans', Helvetica, sans-serif;
 ;
 }
 
+
 h1:hover
 {
 opacity:0.8;
@@ -150,11 +151,7 @@ max-width:250px;
 position:absolute;
 top:685px;
 margin-left:7%;
-<<<<<<< HEAD
 z-index:1216;
-=======
-z-index:316;
->>>>>>> b73b191185607adcdfb4e4e44073959f12c78e7c
 }
 
 /*girl moved down slightly with query*/
